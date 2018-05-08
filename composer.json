@@ -18,11 +18,12 @@
     }
   ],
   "require": {
-    "php": ">=7.0",
+    "php": ">=7.1",
     "illuminate/support": "^5.5",
     "nekman/luhn-algorithm": "^4.0"
   },
   "require-dev": {
+    "roave/security-advisories": "dev-master",
     "phpunit/phpunit": "^7.0",
     "mockery/mockery": "^0.9",
     "orchestra/testbench": "^3.6"
