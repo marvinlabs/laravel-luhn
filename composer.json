@@ -1,0 +1,51 @@
+{
+  "name": "marvinlabs/laravel-luhn",
+  "description": "Luhn algorithm for Laravel",
+  "keywords": [
+    "laravel",
+    "luhn",
+    "credit card",
+    "siren",
+    "siret"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vincent Mimoun-Prat",
+      "email": "contact@vincentprat.info",
+      "homepage": "https://vincentprat.info",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "illuminate/support": "^5.5",
+    "nekman/luhn-algorithm": "^4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0",
+    "mockery/mockery": "^0.9",
+    "orchestra/testbench": "^3.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "MarvinLabs\\Luhn\\": "src/Luhn"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MarvinLabs\\Luhn\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MarvinLabs\\Luhn\\LuhnServiceProvider"
+      ],
+      "aliases": {
+        "Menu": "MarvinLabs\\Luhn\\Facades\\Luhn"
+      }
+    }
+  },
+  "minimum-stability": "stable"
+}
