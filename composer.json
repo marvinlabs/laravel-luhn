@@ -43,7 +43,7 @@
         "MarvinLabs\\Luhn\\LuhnServiceProvider"
       ],
       "aliases": {
-        "Menu": "MarvinLabs\\Luhn\\Facades\\Luhn"
+        "Luhn": "MarvinLabs\\Luhn\\Facades\\Luhn"
       }
     }
   },
