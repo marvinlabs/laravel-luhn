@@ -21,11 +21,13 @@ class AlgorithmTest extends TestCase
     {
         return [
             'default'        => ['837668185', true],
+            'zero'           => ['0', true],
             'with_spaces'    => ['837 668  185', true],
             '123455'         => ['123455', true],
             '4103219202'     => ['4103219202', true],
             '31997233700020' => ['31997233700020', true],
             'large'          => ['89148000003974165685', true],
+            'empty'          => ['', false],
             'invalid'        => ['123456789', false],
             '123'            => ['123', false],
         ];
