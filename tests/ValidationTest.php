@@ -26,4 +26,11 @@ class ValidationTest extends TestCase
         $validator = Validator::make(['number' => TestCase::INVALID_LUHN_NUMBER], ['number' => 'luhn']);
         $this->assertTrue($validator->fails());
     }
+
+    /** @test */
+    public function does_not_throw_on_edge_cases()
+    {
+        $validator = Validator::make(['number' => 'notanumber'], ['number' => 'luhn']);
+        $this->assertTrue($validator->fails());
+    }
 }

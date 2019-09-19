@@ -2,6 +2,7 @@
 
 namespace MarvinLabs\Luhn\Algorithm;
 
+use InvalidArgumentException;
 use MarvinLabs\Luhn\Contracts\LuhnAlgorithm as LuhnAlgorithmContract;
 
 /**
@@ -12,7 +13,11 @@ class LuhnAlgorithm implements LuhnAlgorithmContract
 
     public function isValid(string $input): bool
     {
-        [$number, $lastDigit] = $this->cleanAndSplitInput($input);
+        try {
+            [$number, $lastDigit] = $this->cleanAndSplitInput($input);
+        } catch (InvalidArgumentException $e) {
+            return false;
+        }
 
         $checksum = $this->computeCheckSum($number);
         $sum = $checksum + $lastDigit;
@@ -59,6 +64,11 @@ class LuhnAlgorithm implements LuhnAlgorithmContract
         // Remove everything not a digit, then extract check digit
         $input = \preg_replace('/\D/', '', $input);
         $inputLength = \strlen($input);
+
+        if ($inputLength === 0) {
+            throw new InvalidArgumentException;
+        }
+
         return [
             \substr($input, 0, $inputLength - 1),
             (int)$input[$inputLength - 1],

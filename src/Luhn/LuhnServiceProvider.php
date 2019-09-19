@@ -16,6 +16,7 @@ class LuhnServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerValidationRules();
+        $this->registerTranslationsPath();
     }
 
     public function register()
@@ -35,5 +36,10 @@ class LuhnServiceProvider extends ServiceProvider
     {
         $this->app->singleton(LuhnAlgorithmContract::class, LuhnAlgorithm::class);
         $this->app->singleton('luhn', LuhnAlgorithmContract::class);
+    }
+
+    protected function registerTranslationsPath(): void
+    {
+        $this->loadTranslationsFrom(__DIR__ . '/../../translations', 'luhn');
     }
 }

@@ -21,6 +21,8 @@ class LuhnRule implements Rule
 
     public function message()
     {
-        return trans('validation.luhn');
+        return trans('validation.luhn') != 'validation.luhn'
+            ? trans('validation.luhn')
+            : trans('luhn::validation.luhn');
     }
 }
