@@ -36,11 +36,11 @@ class LuhnAlgorithm implements LuhnAlgorithmContract
     public function computeCheckSum(string $input): int
     {
         // Need to account for the check digit.
-        $nDigits = \strlen($input) + 1;
-        $parity = $nDigits % 2;
+        $nDigits = \strlen($input);
+        $parity = ($nDigits + 1) % 2;
         $checksum = 0;
 
-        for ($i = 0; $i < $nDigits - 1; ++$i)
+        for ($i = 0; $i < $nDigits; ++$i)
         {
             $digit = (int)$input[$i];
 
@@ -68,10 +68,12 @@ class LuhnAlgorithm implements LuhnAlgorithmContract
         if ($inputLength === 0) {
             throw new InvalidArgumentException;
         }
-
+        
+        $inputLength--;
+        
         return [
-            \substr($input, 0, $inputLength - 1),
-            (int)$input[$inputLength - 1],
+            \substr($input, 0, $inputLength),
+            (int)$input[$inputLength],
         ];
     }
 }
