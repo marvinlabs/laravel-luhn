@@ -9,7 +9,7 @@ class AlgorithmTest extends TestCase
 {
     protected $implementations = [];
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -67,7 +67,7 @@ class AlgorithmTest extends TestCase
      * @test
      * @dataProvider provideCheckDigitTestInput
      */
-    public function can_compute_check_digit(string $number, bool $expectedResult): void
+    public function can_compute_check_digit(string $number, int $expectedResult): void
     {
         foreach ($this->implementations as $name => $instance)
         {
@@ -81,7 +81,7 @@ class AlgorithmTest extends TestCase
      * @test
      * @dataProvider provideCheckSumTestInput
      */
-    public function can_compute_check_sum(string $number, bool $expectedResult): void
+    public function can_compute_check_sum(string $number, int $expectedResult): void
     {
         foreach ($this->implementations as $name => $instance)
         {
