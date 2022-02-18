@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marvinlabs/laravel-luhn.svg?style=flat-square)](https://packagist.org/packages/marvinlabs/laravel-luhn)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/marvinlabs/laravel-luhn.svg?style=flat-square)](https://packagist.org/packages/marvinlabs/laravel-luhn)
-[![Build Status](https://github.com/illuminatech/marvinlabs/laravel-luhn/build/badge.svg)](https://github.com/marvinlabs/laravel-luhn/actions)
+[![Build Status](https://github.com/marvinlabs/laravel-luhn/workflows/build/badge.svg)](https://github.com/marvinlabs/laravel-luhn/actions)
 
 `marvinlabs/laravel-luhn` is a laravel package providing various Laravel utilities to work with the
 Luhn algorithm such as:
